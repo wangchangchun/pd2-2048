@@ -24,6 +24,9 @@ public:
     void paint();
     void start();
     void generate();
+    int last[16];
+    bool change;
+    bool ge;
     int point;
 
     ~widget();
@@ -32,6 +35,8 @@ private slots:
     //void on_start_clicked();
 
     void on_pushButton_clicked();
+
+    void on_start_clicked();
 
 private:
     Ui::widget *wui;

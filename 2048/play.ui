@@ -359,7 +359,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>50</y>
+     <y>40</y>
      <width>161</width>
      <height>51</height>
     </rect>
@@ -377,27 +377,51 @@
     <string>reset</string>
    </property>
   </widget>
-  <zorder>win</zorder>
-  <zorder>lose</zorder>
-  <zorder>score</zorder>
-  <zorder>point</zorder>
-  <zorder>B1</zorder>
-  <zorder>B2</zorder>
-  <zorder>B3</zorder>
-  <zorder>B4</zorder>
-  <zorder>B5</zorder>
-  <zorder>B6</zorder>
-  <zorder>B7</zorder>
-  <zorder>B8</zorder>
-  <zorder>B9</zorder>
-  <zorder>B10</zorder>
-  <zorder>B11</zorder>
-  <zorder>B12</zorder>
-  <zorder>B13</zorder>
-  <zorder>B14</zorder>
-  <zorder>B15</zorder>
-  <zorder>B16</zorder>
-  <zorder>pushButton</zorder>
+  <widget class="QLabel" name="back">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>540</width>
+     <height>660</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/cover.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="start">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>520</y>
+     <width>121</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="resorce.qrc">
+     <normaloff>:/new/startV3.png</normaloff>:/new/startV3.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>128</width>
+     <height>64</height>
+    </size>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="resorce.qrc"/>

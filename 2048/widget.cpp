@@ -36,10 +36,18 @@ widget::~widget()
 
 void widget::generate()
 {
-    for(int s=0;s<16;s++)
+    ge=false;
+    for(int k=0;k<16;k++)
     {
-        if(box[s]==0)
-         {
+        if(box[k]==0)
+        {
+            ge=true;
+            break;
+        }
+
+    }
+    if(ge==true)
+    {
             srand(time(0));
             int newblock=rand()%16;
             while(box[newblock]!=0)
@@ -47,11 +55,12 @@ void widget::generate()
               newblock=rand()%16;
              }
             box[newblock]=2;
-
-                break;
-         }
     }
 
+    else
+    {
+        gui->lose->show();
+    }
 }
 
 void widget::paint()
@@ -360,6 +369,11 @@ void widget::start()
 
 void widget::up()
 {
+    change=false;
+    for(int b;b<16;b++)
+    {
+        last[b]=box[b];
+    }
     for(int i=0;i<4;i++)
         {
             int n=0;
@@ -405,13 +419,31 @@ void widget::up()
             break;
         }
     }
-     paint();
+
+    for(int b=0;b<16;b++)
+    {
+        if(last[b]!=box[b])
+        {
+            change=true;
+            break;
+        }
+        else
+            change=false;
+     }
+    if(change==true)
         generate();
+    paint();
+
 }
 void widget::down()
 {
+    change=false;
+    for(int b;b<16;b++)
+    {
+        last[b]=box[b];
+    }
     for(int i=0;i<4;i++)
-        {
+    {
             int n=0;
             int m=3;
             for(int f=0;f<4;f++)
@@ -427,7 +459,7 @@ void widget::down()
                     n++;
                 }
             }
-            for(int t=3;t>=0;t--)
+            for(int t=3;t>0;t--)
             {
                 if(check[t]==check[t-1])
                 {
@@ -454,13 +486,29 @@ void widget::down()
             break;
         }
     }
+    for(int b=0;b<16;b++)
+    {
+        if(last[b]!=box[b])
+        {
+            change=true;
+            break;
+        }
+        else
+            change=false;
+     }
+    if(change==true)
         generate();
-         paint();
+    paint();
 
 
 }
 void widget::right()
 {
+    change=false;
+    for(int b;b<16;b++)
+    {
+        last[b]=box[b];
+    }
     for(int i=0;i<4;i++)
        {
            int n=0;
@@ -505,11 +553,28 @@ void widget::right()
             break;
         }
     }
-       generate();
-        paint();
+    for(int b=0;b<16;b++)
+    {
+        if(last[b]!=box[b])
+        {
+            change=true;
+          break;
+         }
+        else
+            change=false;
+    }
+    if(change==true)
+        generate();
+    paint();
+
 }
 void widget::left()
 {
+    change=false;
+    for(int b;b<16;b++)
+    {
+        last[b]=box[b];
+    }
     for(int i=0;i<4;i++)
         {
             for(int f=0;f<4;f++)
@@ -555,8 +620,20 @@ void widget::left()
             break;
         }
     }
+    for(int b=0;b<16;b++)
+    {
+        if(last[b]!=box[b])
+        {
+            change=true;
+             break;
+        }
+        else
+            change=false;
+     }
+    if(change==true)
         generate();
-         paint();
+    paint();
+
 }
 void widget::keyPressEvent(QKeyEvent* event)
 {
@@ -581,17 +658,7 @@ void widget::keyPressEvent(QKeyEvent* event)
     }
 }
 
-/*void widget::on_start_clicked()
-{
 
-    wui->back->close();
-    wui->start->close();
-    start();
-
-
-
-}
-*/
 
 void widget::on_pushButton_clicked()
 {
@@ -600,7 +667,15 @@ void widget::on_pushButton_clicked()
         box[y]=0;
     }
     point=0;
+    gui->win->hide();
+    gui->lose->hide();
     gui->point->setNum(0);
     start();
     paint();
+}
+
+void widget::on_start_clicked()
+{
+    gui->back->close();
+    gui->start->close();
 }
