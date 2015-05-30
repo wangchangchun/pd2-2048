@@ -358,16 +358,18 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>200</x>
      <y>40</y>
-     <width>161</width>
+     <width>150</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Calibri</family>
+     <family>Chiller</family>
      <pointsize>36</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="focusPolicy">
@@ -399,7 +401,7 @@
   <widget class="QPushButton" name="start">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>200</x>
      <y>520</y>
      <width>121</width>
      <height>61</height>
@@ -407,6 +409,9 @@
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
    </property>
    <property name="text">
     <string/>
@@ -422,6 +427,66 @@
     </size>
    </property>
   </widget>
+  <widget class="QLabel" name="gameback">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>540</width>
+     <height>660</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/background.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="people">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>-30</y>
+     <width>301</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/people.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>gameback</zorder>
+  <zorder>people</zorder>
+  <zorder>score</zorder>
+  <zorder>point</zorder>
+  <zorder>B1</zorder>
+  <zorder>B2</zorder>
+  <zorder>B3</zorder>
+  <zorder>B4</zorder>
+  <zorder>B5</zorder>
+  <zorder>B6</zorder>
+  <zorder>B7</zorder>
+  <zorder>B8</zorder>
+  <zorder>B9</zorder>
+  <zorder>B10</zorder>
+  <zorder>B11</zorder>
+  <zorder>B12</zorder>
+  <zorder>B13</zorder>
+  <zorder>B14</zorder>
+  <zorder>B15</zorder>
+  <zorder>B16</zorder>
+  <zorder>lose</zorder>
+  <zorder>win</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>back</zorder>
+  <zorder>start</zorder>
  </widget>
  <resources>
   <include location="resorce.qrc"/>

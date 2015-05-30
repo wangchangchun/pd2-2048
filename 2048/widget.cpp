@@ -1,11 +1,9 @@
 #include "widget.h"
-//#include "ui_widget.h"
 #include "ui_play.h"
 #include<QKeyEvent>
 #include<iostream>
 #include<cstdlib>
 #include<ctime>
-#include<QDebug>
 using namespace std;
 widget::widget(QWidget *parent) :
     QWidget(parent),

@@ -30,5 +30,6 @@
         <file>1024v2.png</file>
         <file>2048v2.png</file>
         <file>people.png</file>
+        <file>background.png</file>
     </qresource>
 </RCC>
