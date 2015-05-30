@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>540</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resorce.qrc">
+    <normaloff>:/new/2048.png</normaloff>:/new/2048.png</iconset>
+  </property>
+  <widget class="QLabel" name="score">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>131</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Calibri</family>
+     <pointsize>36</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>score</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="point">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>120</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Calibri</family>
+     <pointsize>28</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B1">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>220</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B2">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>220</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B3">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>220</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B4">
+   <property name="geometry">
+    <rect>
+     <x>375</x>
+     <y>220</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B5">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>315</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B6">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>315</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B7">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>315</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B8">
+   <property name="geometry">
+    <rect>
+     <x>375</x>
+     <y>315</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B9">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>410</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B10">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>410</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B11">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>410</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B12">
+   <property name="geometry">
+    <rect>
+     <x>375</x>
+     <y>410</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B13">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>505</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B14">
+   <property name="geometry">
+    <rect>
+     <x>185</x>
+     <y>505</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B15">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>505</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="B16">
+   <property name="geometry">
+    <rect>
+     <x>375</x>
+     <y>505</y>
+     <width>90</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/0.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="win">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>540</width>
+     <height>660</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/end.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lose">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>540</width>
+     <height>660</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resorce.qrc">:/new/lose.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>50</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Calibri</family>
+     <pointsize>36</pointsize>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string>reset</string>
+   </property>
+  </widget>
+  <zorder>win</zorder>
+  <zorder>lose</zorder>
+  <zorder>score</zorder>
+  <zorder>point</zorder>
+  <zorder>B1</zorder>
+  <zorder>B2</zorder>
+  <zorder>B3</zorder>
+  <zorder>B4</zorder>
+  <zorder>B5</zorder>
+  <zorder>B6</zorder>
+  <zorder>B7</zorder>
+  <zorder>B8</zorder>
+  <zorder>B9</zorder>
+  <zorder>B10</zorder>
+  <zorder>B11</zorder>
+  <zorder>B12</zorder>
+  <zorder>B13</zorder>
+  <zorder>B14</zorder>
+  <zorder>B15</zorder>
+  <zorder>B16</zorder>
+  <zorder>pushButton</zorder>
+ </widget>
+ <resources>
+  <include location="resorce.qrc"/>
+ </resources>
+ <connections/>
+</ui>

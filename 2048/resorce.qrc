@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/new">
+        <file>cover.png</file>
+        <file>start.png</file>
+        <file>startV2.png</file>
+        <file>startV3.png</file>
+        <file>0.png</file>
+        <file>2.png</file>
+        <file>4.png</file>
+        <file>8.png</file>
+        <file>16.png</file>
+        <file>32.png</file>
+        <file>64.png</file>
+        <file>128.png</file>
+        <file>256.png</file>
+        <file>512.png</file>
+        <file>1024.png</file>
+        <file>2048.png</file>
+        <file>lose.png</file>
+        <file>end.png</file>
+        <file>2v2.png</file>
+        <file>4v2.png</file>
+        <file>8v2.png</file>
+        <file>16v2.png</file>
+        <file>32v2.png</file>
+        <file>64v2.png</file>
+        <file>128v2.png</file>
+        <file>256v2.png</file>
+        <file>512v2.png</file>
+        <file>1024v2.png</file>
+        <file>2048v2.png</file>
+    </qresource>
+</RCC>
