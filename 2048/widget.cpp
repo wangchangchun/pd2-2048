@@ -13,8 +13,6 @@ widget::widget(QWidget *parent) :
      gui->setupUi(this);
      gui->win->hide();
      gui->lose->hide();
-      //wui->setupUi(this);
-     //connect(wui->start, SIGNAL(clicked()),this,SLOT(on_start_clicked()));
      point=0;
      for(int i=0;i<16;i++)
      {
@@ -28,24 +26,12 @@ widget::widget(QWidget *parent) :
 
 widget::~widget()
 {
-    //delete wui;
     delete gui;
 }
 
 void widget::generate()
 {
-    ge=false;
-    for(int k=0;k<16;k++)
-    {
-        if(box[k]==0)
-        {
-            ge=true;
-            break;
-        }
 
-    }
-    if(ge==true)
-    {
             srand(time(0));
             int newblock=rand()%16;
             while(box[newblock]!=0)
@@ -53,12 +39,6 @@ void widget::generate()
               newblock=rand()%16;
              }
             box[newblock]=2;
-    }
-
-    else
-    {
-        gui->lose->show();
-    }
 }
 
 void widget::paint()
@@ -355,23 +335,16 @@ void widget::start()
      }
      box[newblock_1]=2;
      box[newblock_2]=2;
-
-
-     for(int i=0;i<16;i++)
-     {
-         cout<<box[i];
-        if(i%4==3)
-            cout<<endl;
-     }
 }
 
 void widget::up()
 {
     change=false;
-    for(int b;b<16;b++)
+    for(int b=0;b<16;b++)
     {
         last[b]=box[b];
     }
+    cout<<endl;
     for(int i=0;i<4;i++)
         {
             int n=0;
@@ -422,7 +395,7 @@ void widget::up()
     {
         if(last[b]!=box[b])
         {
-            change=true;
+            change=true;            
             break;
         }
         else
@@ -430,13 +403,27 @@ void widget::up()
      }
     if(change==true)
         generate();
+    else
+    {
+        ge=false;
+        for(int k=0;k<16;k++)
+        {
+            if(box[k]==0)
+            {
+                ge=true;
+                break;
+            }
+        }
+        if(ge==false)
+         gui->lose->show();
+    }
     paint();
 
 }
 void widget::down()
 {
     change=false;
-    for(int b;b<16;b++)
+    for(int b=0;b<16;b++)
     {
         last[b]=box[b];
     }
@@ -496,6 +483,20 @@ void widget::down()
      }
     if(change==true)
         generate();
+    else
+    {
+        ge=false;
+        for(int k=0;k<16;k++)
+        {
+            if(box[k]==0)
+            {
+                ge=true;
+                break;
+            }
+        }
+        if(ge==false)
+         gui->lose->show();
+    }
     paint();
 
 
@@ -503,7 +504,7 @@ void widget::down()
 void widget::right()
 {
     change=false;
-    for(int b;b<16;b++)
+    for(int b=0;b<16;b++)
     {
         last[b]=box[b];
     }
@@ -563,13 +564,27 @@ void widget::right()
     }
     if(change==true)
         generate();
+    else
+    {
+        ge=false;
+        for(int k=0;k<16;k++)
+        {
+            if(box[k]==0)
+            {
+                ge=true;
+                break;
+            }
+        }
+        if(ge==false)
+         gui->lose->show();
+    }
     paint();
 
 }
 void widget::left()
 {
     change=false;
-    for(int b;b<16;b++)
+    for(int b=0;b<16;b++)
     {
         last[b]=box[b];
     }
@@ -625,12 +640,28 @@ void widget::left()
             change=true;
              break;
         }
-        else
-            change=false;
+
      }
     if(change==true)
         generate();
-    paint();
+    else
+    {
+        ge=false;
+        for(int k=0;k<16;k++)
+        {
+            if(box[k]==0)
+            {
+                ge=true;
+                break;
+            }
+        }
+        if(ge==false)
+        {
+            sleep(2);
+         gui->lose->show();
+        }
+    }
+        paint();
 
 }
 void widget::keyPressEvent(QKeyEvent* event)
