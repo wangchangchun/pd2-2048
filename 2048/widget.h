@@ -24,10 +24,12 @@ public:
     void paint();
     void start();
     void generate();
+    int max;
     int last[16];
     bool change;
     bool ge;
     int point;
+    int round;
 
     ~widget();
 

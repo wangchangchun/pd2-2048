@@ -13,7 +13,11 @@ widget::widget(QWidget *parent) :
      gui->setupUi(this);
      gui->win->hide();
      gui->lose->hide();
+     gui->people->hide();
+     gui->attact->hide();
+    max=0;
      point=0;
+     round=0;
      for(int i=0;i<16;i++)
      {
          box[i]=0;
@@ -31,14 +35,44 @@ widget::~widget()
 
 void widget::generate()
 {
-
+ round++;
             srand(time(0));
+            int r=rand()%10;
+            if(round==max/5+10+r)
+            {
+                 gui->attact->show();
+                for(int att=0;att<16;att++)
+                {
+                    if(box[att]>2)
+                        box[att]=box[att]/2;
+
+                }
+                round=0;
+
+            }
+            if(max==16||max==32||max==128||max==256||max==512||max==1024)
+                round=0;
             int newblock=rand()%16;
             while(box[newblock]!=0)
             {
               newblock=rand()%16;
              }
             box[newblock]=2;
+            for(int m=0;m<16;m++)
+            {
+                if(box[m]>max)
+                    max=box[m];
+            }
+            if(max>=32&&max<256)
+                gui->monster->setPixmap(QPixmap(":/new/monster.png"));
+            else if(max>=256&&max<1024)
+                gui->monster->setPixmap(QPixmap(":/new/Qpeople.png"));
+            else if(max==1024)
+            {
+                gui->monster->close();
+                gui->people->show();
+            }
+
 }
 
 void widget::paint()
@@ -334,11 +368,13 @@ void widget::start()
          newblock_2=rand()%16;
      }
      box[newblock_1]=2;
-     box[newblock_2]=2;
+     box[newblock_2]=2;     
 }
 
 void widget::up()
 {
+    if(round==0)
+         gui->attact->hide();
     change=false;
     for(int b=0;b<16;b++)
     {
@@ -422,6 +458,8 @@ void widget::up()
 }
 void widget::down()
 {
+    if(round==0)
+         gui->attact->hide();
     change=false;
     for(int b=0;b<16;b++)
     {
@@ -503,6 +541,8 @@ void widget::down()
 }
 void widget::right()
 {
+    if(round==0)
+         gui->attact->hide();
     change=false;
     for(int b=0;b<16;b++)
     {
@@ -583,6 +623,8 @@ void widget::right()
 }
 void widget::left()
 {
+    if(round==0)
+         gui->attact->hide();
     change=false;
     for(int b=0;b<16;b++)
     {
@@ -656,10 +698,7 @@ void widget::left()
             }
         }
         if(ge==false)
-        {
-            sleep(2);
          gui->lose->show();
-        }
     }
         paint();
 
@@ -699,8 +738,14 @@ void widget::on_pushButton_clicked()
     gui->win->hide();
     gui->lose->hide();
     gui->point->setNum(0);
+    gui->people->hide();
+    max=0;
+    gui->attact->hide();
+     gui->monster->setPixmap(QPixmap(":/new/min.png"));
+     gui->monster->show();
     start();
     paint();
+
 }
 
 void widget::on_start_clicked()

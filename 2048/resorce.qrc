@@ -31,5 +31,9 @@
         <file>2048v2.png</file>
         <file>people.png</file>
         <file>background.png</file>
+        <file>min.png</file>
+        <file>monster.png</file>
+        <file>Qpeople.png</file>
+        <file>attack.png</file>
     </qresource>
 </RCC>
