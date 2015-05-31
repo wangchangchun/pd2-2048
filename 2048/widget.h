@@ -41,7 +41,7 @@ private slots:
     void on_start_clicked();
 
 private:
-    Ui::widget *wui;
+    //Ui::widget *wui;
     Ui::Form *gui;
 
 };
