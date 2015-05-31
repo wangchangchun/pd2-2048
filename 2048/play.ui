@@ -477,6 +477,9 @@
    <property name="pixmap">
     <pixmap resource="resorce.qrc">:/new/min.png</pixmap>
    </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="attact">
    <property name="geometry">
